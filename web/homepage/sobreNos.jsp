@@ -92,16 +92,16 @@
 
         <div class="infocardContainer">
             <div id="main">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Dog_coat_variation.png"></img>
+                <img src="../icons/arunia.jpg"></img>
             </div>
             <div id="textbois">
-                <h2 style="color: black">Arunia Ol&iacute;mpio</h2>
-                <h4 style="color: black">Desenvolvedora de Software</h4>
+                <h2 style="color: black">Arunia Francisco Ol&iacute;mpio</h2>
+                <h4 style="color: black">Engenheira de Software</h4>
                 <a href="mailto:ninanani424@gmail.com"  style="color: black">ninanani424@gmail.com</a>
                 <div id="hotlinks">
-                    <a href="https://www.facebook.com/aruniaesperanca.nina"><img id="codepenio" src="../icons/fblogo.png" target="_blank"></img>
+                    <a href="https://www.facebook.com/aruniaesperanca.nina/"><img id="codepenio" src="../icons/fblogo.png" target="_blank"></img>
                     </a>
-                    <a href="https://codepen.io/LIMESTA">
+                    <a href="https://github.com/ninanani424/">
                         <img id="codepenio" src="../icons/gitlogo.png" target="_blank"></img>
                     </a>
                     <a href="#">
@@ -112,16 +112,16 @@
         </div>
         <div class="infocardContainer">
             <div id="main">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/ea/Dog_coat_variation.png"></img>
+                <img src="../icons/silinto.jpg"></img>
             </div>
             <div id="textbois">
-                <h2 style="color: black">Silinto</h2>
+                <h2 style="color: black">Silinto Fiderguino Francisco</h2>
                 <h4 style="color: black">Engenheiro de Software</h4>
-                <a href="mailto:limecicila@gmail.com"  style="color: black">limecicila@gmail.com</a>
+                <a href="mailto:fiderguino@gmail.com"  style="color: black">fiderguino@gmail.com</a>
                 <div id="hotlinks">
-                    <a href="https://codepen.io/LIMESTA"><img id="codepenio" src="../icons/fblogo.png" target="_blank"></img>
+                    <a href="https://www.facebook.com/fiderguino"><img id="codepenio" src="../icons/fblogo.png" target="_blank"></img>
                     </a>
-                    <a href="https://codepen.io/LIMESTA">
+                    <a href="https://github.com/silfider">
                         <img id="codepenio" src="../icons/gitlogo.png" target="_blank"></img>
                     </a>
                     <a href="#">
