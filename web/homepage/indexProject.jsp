@@ -106,7 +106,7 @@
                     <div class="search-box">
                         <form name="procurar" action="../apoio/apoios.jsp?action=procurar">
                             <input type="hidden" name="action" value="procurar"/>
-                            <input type="text" class="search-txt" name="procurarNome" placeholder="Procurar Pessoas">
+                            <input type="text" class="search-txt" name="procurarNome" placeholder="Procurar Nome da Pessoa">
                             <a class="search-btn">
                                 <img src="../homepage/images/search_icon.png" alt="#" />
                             </a>

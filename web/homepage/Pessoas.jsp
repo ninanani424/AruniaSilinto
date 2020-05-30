@@ -82,7 +82,7 @@
         <br/><br/><br/><br/><br/>
         <!-- Start Banner -->
 
-        <p style="margin-left: 20px"><a href="../funcionario/landingFuncionario.jsp"><img src="../icons/back.png" width="30" height="30" alt="Voltar"/> Voltar</a></p>
+        <p style="margin-left: 20px"><a href="../homepage/indexProject.jsp"><img src="../icons/back.png" width="30" height="30" alt="Voltar"/> Voltar</a></p>
 
         <h1 align="center">Gest&atilde;o de Pessoas</h1>
 
@@ -103,14 +103,14 @@
                 out.println("<table border='0' align='center' >");
                 out.println("<thead>");
                 out.println("<tr>");
-                out.println("<th width='100' bgcolor='silver'><h2 align='center'>Nome</h2></th>");
-                out.println("<th width='100' bgcolor='silver'><h2 align='center'>Idade</h2></th>");
+                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Nome</h2></th>");
+                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Apelido</h2></th>");
                 out.println("<th width='100' bgcolor='silver'><h2 align='center'>Sexo</h2></th>");
-                out.println("<th width='100' bgcolor='silver'><h2 align='center'>Data Nasc.</h2></th>");
-                out.println("<th width='200' bgcolor='silver'><h2 align='center'>Prov&iacute;ncia Nasc.</h2></th>");
-                out.println("<th width='100' bgcolor='silver'><h2 align='center'>Cidade Nasc.</h2></th>");
+                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Data Nasc.</h2></th>");
+                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Prov&iacute;ncia Nasc.</h2></th>");
+                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Cidade Nasc.</h2></th>");
                 out.println("<th width='200' bgcolor='silver'><h2 align='center'>Endere&ccedil;o</h2></th>");
-                out.println("<th width='200' bgcolor='silver'><h2 align='center'>Telefone</h2></th>");
+                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Telefone</h2></th>");
                 out.println("<th width='auto' bgcolor='silver'><h2 align='center'>&nbsp;</h2></td>");
                 out.println("</tr>");
                 out.println("</thead>");
