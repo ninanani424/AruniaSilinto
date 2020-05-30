@@ -30,48 +30,7 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="css/custom.css" />
 
-        <style>
-            .dropbtn {
-                background-color: #4CAF50;
-                color: white;
-                padding: 6.5px;
-                font-size: 5px;
-                border: none;
-            }
-
-            /* The container <div> - needed to position the dropdown content */
-            .dropdown {
-                position: relative;
-                display: inline-block;
-            }
-
-            /* Dropdown Content (Hidden by Default) */
-            .dropdown-content {
-                display: none;
-                position: absolute;
-                background-color: #f1f1f1;
-                min-width: 160px;
-                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-                z-index: 1;
-            }
-
-            /* Links inside the dropdown */
-            .dropdown-content a {
-                color: black;
-                padding: 12px 16px;
-                text-decoration: none;
-                display: block;
-            }
-
-            /* Change color of dropdown links on hover */
-            .dropdown-content a:hover {background-color: #ddd;}
-
-            /* Show the dropdown menu on hover */
-            .dropdown:hover .dropdown-content {display: block;}
-
-            /* Change the background color of the dropdown button when the dropdown content is shown */
-            .dropdown:hover .dropbtn {background-color: #3e8e41;}
-        </style>
+        
 
     </head>
 
@@ -100,11 +59,11 @@
                             <li><a class="nav-link active" href="../homepage/indexProject.jsp">P&aacute;gina Inicial</a></li>
                             <li><a class="nav-link" href="../homepage/Pessoas.jsp?action=adicionar">Nova Pessoa</a></li>
                             <li><a class="nav-link" href="../homepage/Pessoas.jsp?action=mostrar">Mostrar Todas Pessoas</a></li>                                                             
-                            <li><a class="nav-link active" style="background:#f2184f;color:#fff;" href="../apoio/landingApoio.jsp">Sobre N&oacute;s</a></li>                           
+                            <li><a class="nav-link active" style="background:#f2184f;color:#fff;" href="../homepage/sobreNos.jsp">Sobre N&oacute;s</a></li>                           
                         </ul>
                     </div>
                     <div class="search-box">
-                        <form name="procurar" action="../apoio/apoios.jsp?action=procurar">
+                        <form name="procurar" action="../homepage/Pessoas.jsp?action=procurar">
                             <input type="hidden" name="action" value="procurar"/>
                             <input type="text" class="search-txt" name="procurarNome" placeholder="Procurar Nome da Pessoa">
                             <a class="search-btn">

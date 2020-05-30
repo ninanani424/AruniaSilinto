@@ -62,13 +62,13 @@
                             <li><a class="nav-link active" href="../homepage/indexProject.jsp">P&aacute;gina Inicial</a></li>
                             <li><a class="nav-link" href="../homepage/Pessoas.jsp?action=adicionar">Nova Pessoa</a></li>
                             <li><a class="nav-link" href="../homepage/Pessoas.jsp?action=mostrar">Mostrar Todas Pessoas</a></li>                                                             
-                            <li><a class="nav-link active" style="background:#f2184f;color:#fff;" href="../apoio/landingApoio.jsp">Sobre N&oacute;s</a></li>                           
+                            <li><a class="nav-link active" style="background:#f2184f;color:#fff;" href="../homepage/sobreNos.jsp">Sobre N&oacute;s</a></li>                           
                         </ul>
                     </div>
                     <div class="search-box">
-                        <form name="procurar" action="../apoio/apoios.jsp?action=procurar">
+                        <form name="procurar" action="../homepage/Pessoas.jsp?action=procurar">
                             <input type="hidden" name="action" value="procurar"/>
-                            <input type="text" class="search-txt" name="procurarNome" placeholder="Procurar Doa&ccedil;&otilde;es">
+                            <input type="text" class="search-txt" name="procurarNome" placeholder="Procurar Nome da Pessoa">
                             <a class="search-btn">
                                 <img src="../homepage/images/search_icon.png" alt="#" />
                             </a>
@@ -226,7 +226,7 @@
 
                 response.sendRedirect(request.getContextPath() + "/homepage/Pessoas.jsp?action=mostrar&alert=apagar");
 
-            } /* else if (action.equalsIgnoreCase("editar")) {
+            } else if (action.equalsIgnoreCase("editar")) {
 
                 String id = request.getParameter("id");
 
@@ -236,7 +236,7 @@
 
                 out.println("");
 
-                FactoryPessoa fu2 = new FactoryFuncionario();
+                FactoryPessoa fu2 = new FactoryPessoa();
                 List usuarios2 = new ArrayList<Pessoa>();
                 usuarios2 = fu.selectPessoasByPrimaryKey(id);
 
@@ -244,19 +244,19 @@
                 usuarios3 = (ArrayList<Pessoa>) usuarios2;
 
                 for (Pessoa p : usuarios3) {
-                    out.println("<h3 align='center'>Editar Funncion&aacute;rio</h3>");
+                    out.println("<h3 align='center'>Editar Pessoa</h3>");
 
                     out.println("<table border='0' align='center' bgcolor='silver'>");
-                    out.println("<form method='get' action='../funcionario/funcionarios.jsp?action=alterar'>");
+                    out.println("<form method='get' action='../homepage/Pessoas.jsp?action=alterar'>");
                     out.println("<input type='hidden' name='action' value='alterar'/>");
-                    out.println("<input type='hidden' name='id' value='" + p.getIdfuncionario() + "'/>");
+                    out.println("<input type='hidden' name='id' value='" + p.getIdPessoa() + "'/>");
                     out.println("<tr>");
                     out.println("<td width='200'><h2 align='center'>Nome:</h2></td>");
                     out.println("<td width='200'><input type='text' name='nome' value='" + p.getNome() + "' required/></td>");
                     out.println("</tr>");
                     out.println("<tr>");
-                    out.println("<td width='200'><h2 align='center'>Idade:</h2></td>");
-                    out.println("<td width='200'><input type='number' name='idade' value='" + p.getIdade() + "' required/></td>");
+                    out.println("<td width='200'><h2 align='center'>Apelido:</h2></td>");
+                    out.println("<td width='200'><input type='text' name='apelido' value='" + p.getApelido()+ "' required/></td>");
                     out.println("</tr>");
                     out.println("<tr>");
                     String sexo1 = "";
@@ -271,6 +271,10 @@
                     out.println("Femelino<input type='radio' name='sexo' value='femenino' " + sexo2 + "></td>");
                     out.println("</tr>");
                     out.println("<tr>");
+                    out.println("<tr>");
+                    out.println("<td width='200'><h2 align='center'>Data de Nascimento:</h2></td>");
+                    out.println("<td width='200'><input type='date' name='dataNascimento' value='" + p.getDataNascimento()+ "' required/></td>");
+                    out.println("</tr>");
                     
                     String maputoCidade = "";
                     String maputoProvincia = "";
@@ -284,33 +288,33 @@
                     String caboDelgado = "";
                     String niassa = "";
                     
-                    if (p.getProvincia().equalsIgnoreCase("Maputo Cidade")) {
+                    if (p.getProvinciaNascimento().equalsIgnoreCase("Maputo Cidade")) {
                         maputoCidade = "selected";
-                    } else if (p.getProvincia().equalsIgnoreCase("Maputo Provincia")) {
+                    } else if (p.getProvinciaNascimento().equalsIgnoreCase("Maputo Provincia")) {
                         maputoProvincia = "selected";
-                    } else if (p.getProvincia().equalsIgnoreCase("Gaza")) {
+                    } else if (p.getProvinciaNascimento().equalsIgnoreCase("Gaza")) {
                         gaza = "selected";
-                    } else if (p.getProvincia().equalsIgnoreCase("Inhambane")) {
+                    } else if (p.getProvinciaNascimento().equalsIgnoreCase("Inhambane")) {
                         inhambane = "selected";
-                    } else if (p.getProvincia().equalsIgnoreCase("Manica")) {
+                    } else if (p.getProvinciaNascimento().equalsIgnoreCase("Manica")) {
                         manica = "selected";
-                    } else if (p.getProvincia().equalsIgnoreCase("Sofala")) {
+                    } else if (p.getProvinciaNascimento().equalsIgnoreCase("Sofala")) {
                         sofala = "selected";
-                    } else if (p.getProvincia().equalsIgnoreCase("Tete")) {
+                    } else if (p.getProvinciaNascimento().equalsIgnoreCase("Tete")) {
                         tete = "selected";
-                    } else if (p.getProvincia().equalsIgnoreCase("Zambezia")) {
+                    } else if (p.getProvinciaNascimento().equalsIgnoreCase("Zambezia")) {
                         zambezia = "selected";
-                    } else if (p.getProvincia().equalsIgnoreCase("Nampula")) {
+                    } else if (p.getProvinciaNascimento().equalsIgnoreCase("Nampula")) {
                         nampula = "selected";
-                    } else if (p.getProvincia().equalsIgnoreCase("CaboDelgado")) {
+                    } else if (p.getProvinciaNascimento().equalsIgnoreCase("CaboDelgado")) {
                         caboDelgado = "selected";
-                    } else if (p.getProvincia().equalsIgnoreCase("Niassa")) {
+                    } else if (p.getProvinciaNascimento().equalsIgnoreCase("Niassa")) {
                         niassa = "selected";
                     }
-                    out.println("<td width='200'><h2 align='center'>Prov&iacute;ncia:</h2></td>");
-                    out.println("<td width='200'><select name='provincia'>");
-                    out.println("<option " + maputoCidade + " value='MaputoCidade'>Maputo Cidade</option>");
-                    out.println("<option " + maputoProvincia + " value='MaputoProvincia'>Maputo Provincia</option>");
+                    out.println("<td width='200'><h2 align='center'>Prov&iacute;ncia de Nascimento:</h2></td>");
+                    out.println("<td width='200'><select name='provinciaNascimento'>");
+                    out.println("<option " + maputoCidade + " value='Maputo Cidade'>Maputo Cidade</option>");
+                    out.println("<option " + maputoProvincia + " value='Maputo Provincia'>Maputo Provincia</option>");
                     out.println("<option " + gaza + " value='Gaza'>Gaza</option>");
                     out.println("<option " + inhambane + " value='Inhambane'>Inhambane</option>");
                     out.println("<option " + manica + " value='Manica'>Manica</option>");
@@ -323,16 +327,16 @@
                     out.println("</select></td>");
                     out.println("</tr>");
                     out.println("<tr>");
-                    out.println("<td width='200'><h2 align='center'>Desempenho:</h2></td>");
-                    out.println("<td width='200'><input type='text' name='desempenho' value='" + p.getDesempenho() + "' required/></td>");
+                    out.println("<td width='200'><h2 align='center'>Cidade de Nascimento:</h2></td>");
+                    out.println("<td width='200'><input type='text' name='cidadeNascimento' value='" + p.getCidadeNascimento()+ "' required/></td>");
                     out.println("</tr>");
                     out.println("<tr>");
-                    out.println("<td width='200'><h2 align='center'>Quarteir&atilde;o:</h2></td>");
-                    out.println("<td width='200'><input type='text' name='quarteirao' value='" + p.getQuarteirao() + "' required/></td>");
+                    out.println("<td width='200'><h2 align='center'>Endere&ccedil;o:</h2></td>");
+                    out.println("<td width='200'><input type='text' name='endereco' value='" + p.getEndereco()+ "' required/></td>");
                     out.println("</tr>");
                     out.println("<tr>");
-                    out.println("<td width='200'><h2 align='center'>Bairro</h2></td>");
-                    out.println("<td width='200'><input type='text' name='bairro' value='" + p.getBairro() + "' required/></td>");
+                    out.println("<td width='200'><h2 align='center'>Telefone:</h2></td>");
+                    out.println("<td width='200'><input type='number' name='telefone' value='" + p.getTelefone()+ "' required/></td>");
                     out.println("</tr>");
                     out.println("<tr>");
                     out.println("<td>");
@@ -347,32 +351,34 @@
 
                 int id2 = Integer.parseInt(request.getParameter("id"));
                 String nome2 = request.getParameter("nome");
-                String idade2 = request.getParameter("idade");
+                String apelido2 = request.getParameter("apelido");
                 String sexo2 = request.getParameter("sexo");
-                String provincia2 = request.getParameter("provincia");
-                String desempenho2 = request.getParameter("desempenho");
-                String quarteirao2 = request.getParameter("quarteirao");
-                String bairro2 = request.getParameter("bairro");
+                String dataNascimento2 = request.getParameter("dataNascimento");
+                String provinciaNascimento2 = request.getParameter("provinciaNascimento");
+                String cidadeNascimento2 = request.getParameter("cidadeNascimento");
+                String endereco2 = request.getParameter("endereco");
+                String telefone2 = request.getParameter("telefone");
 
                 FactoryPessoa fu = new FactoryPessoa();
                 Pessoa c = (Pessoa) fu.newElement();
 
-                c.setIdfuncionario(id2);
+                c.setIdPessoa(id2);
                 c.setNome(nome2);
-                c.setIdade(idade2);
+                c.setApelido(apelido2);
                 c.setSexo(sexo2);
-                c.setProvincia(provincia2);
-                c.setDesempenho(desempenho2);
-                c.setQuarteirao(quarteirao2);
-                c.setBairro(bairro2);
+                c.setDataNascimento(dataNascimento2);
+                c.setProvinciaNascimento(provinciaNascimento2);
+                c.setCidadeNascimento(cidadeNascimento2);
+                c.setEndereco(endereco2);
+                c.setTelefone(telefone2);
 
                 fu.update(c);
 
-                response.sendRedirect(request.getContextPath() + "/funcionario/funcionarios.jsp?action=mostrar");
+                response.sendRedirect(request.getContextPath() + "/homepage/Pessoas.jsp?action=mostrar");
 
-            } else if (action.equalsIgnoreCase("procurar")) {
+            }  else if (action.equalsIgnoreCase("procurar")) {
 
-                out.println("<h3 align='center'>Procurar Funcion&aacute;rio</h3>");
+                out.println("<h3 align='center'>Procurar Pessoa</h3>");
 
                 String id = request.getParameter("procurarNome");
 
@@ -396,36 +402,38 @@
                 } else {
 
                     out.println("<div id='client'>");
-                    out.println("<table border='0' align='center' >");
-                    out.println("<thead>");
-                    out.println("<tr>");
-                    out.println("<th width='200' bgcolor='silver'><h2 align='center'>Nome</h2></th>");
-                    out.println("<th width='100' bgcolor='silver'><h2 align='center'>Idade</h2></th>");
-                    out.println("<th width='100' bgcolor='silver'><h2 align='center'>Sexo</h2></th>");
-                    out.println("<th width='100' bgcolor='silver'><h2 align='center'>Prov&aacute;ncia</h2></th>");
-                    out.println("<th width='200' bgcolor='silver'><h2 align='center'>Desempenho</h2></th>");
-                    out.println("<th width='100' bgcolor='silver'><h2 align='center'>Quarteir&atilde;o</h2></th>");
-                    out.println("<th width='200' bgcolor='silver'><h2 align='center'>Bairro</h2></th>");
-                    out.println("<th width='auto' bgcolor='silver'><h2 align='center'>&nbsp;</h2></td>");
-                    out.println("</tr>");
-                    out.println("</thead>");
+                out.println("<table border='0' align='center' >");
+                out.println("<thead>");
+                out.println("<tr>");
+                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Nome</h2></th>");
+                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Apelido</h2></th>");
+                out.println("<th width='100' bgcolor='silver'><h2 align='center'>Sexo</h2></th>");
+                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Data de Nasc.</h2></th>");
+                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Prov&iacute;ncia de Nasc.</h2></th>");
+                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Cidade de Nasc.</h2></th>");
+                out.println("<th width='200' bgcolor='silver'><h2 align='center'>Endere&ccedil;o</h2></th>");
+                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Telefone</h2></th>");
+                out.println("<th width='auto' bgcolor='silver'><h2 align='center'>&nbsp;</h2></td>");
+                out.println("</tr>");
+                out.println("</thead>");
 
-                    for (Pessoa p : usuarios3) {
-                        out.println("<tr>");
-                        out.println("<td><p>" + p.getNome() + "</td>");
-                        out.println("<td><p align='center'>" + p.getIdade() + "</p></td>");
-                        out.println("<td><p align='center'>" + p.getSexo() + "</p></td>");
-                        out.println("<td><p align='center'>" + p.getProvincia() + "</p></td>");
-                        out.println("<td><p align='center'>" + p.getDesempenho() + "</p></td>");
-                        out.println("<td><p align='center'>" + p.getQuarteirao() + "</p></td>");
-                        out.println("<td><p align='center'>" + p.getBairro() + "</p></td>");
-                        out.println("<td><a href='../funcionario/funcionarios.jsp?action=editar&id=" + p.getIdfuncionario() + "'><img src='../icons/funcionarioedit.png' width='40' height='40' alt='Editar Funcionario'/> &nbsp; <a onclick='return confirm('Deseja apagar?')' href='../funcionario/funcionarios.jsp?action=apagar&id=" + p.getIdfuncionario() + "'><img src='../icons/funcionariodelete.png' width='40' height='40' alt='Apagar Funcionario'/></td>");
-                        out.println("</tr>");
-                    }
-                    out.println("</table>");
+                for (Pessoa p : usuarios3) {
+                    out.println("<tr>");
+                    out.println("<td><p align='center'>" + p.getNome() + "</td>");
+                    out.println("<td><p align='center'>" + p.getApelido() + "</p></td>");
+                    out.println("<td><p align='center'>" + p.getSexo() + "</p></td>");
+                    out.println("<td><p align='center'>" + p.getDataNascimento()+ "</p></td>");
+                    out.println("<td><p align='center'>" + p.getProvinciaNascimento()+ "</p></td>");
+                    out.println("<td><p align='center'>" + p.getCidadeNascimento()+ "</p></td>");
+                    out.println("<td><p align='center'>" + p.getEndereco()+ "</p></td>");
+                    out.println("<td><p align='center'>" + p.getTelefone()+ "</p></td>");
+                    out.println("<td><a href='../homepage/Pessoas.jsp?action=editar&id=" + p.getIdPessoa() + "'><img src='../icons/edit.png' width='40' height='40' alt='Editar Pessoa'/> &nbsp; <a onclick='return confirm('Deseja apagar?')' href='../homepage/Pessoas.jsp?action=apagar&id=" + p.getIdPessoa() + "'><img src='../icons/remove.png' width='40' height='40' alt='Apagar Pessoa'/></td>");
+                    out.println("</tr>");
+                }
+                out.println("</table>");
                 }
             }
-            */
+            
 
 
         %>
@@ -456,10 +464,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <p class="crp">© 2020 Servi&ccedil;o Distrital - Chiure . Todos os direitos reservados.</p>
+                        <p class="crp">© 2020 Arunia e Silinto . Todos os direitos reservados.</p>
                         <ul class="bottom_menu">
-                            <li><a href="#">Governo de Mo&ccedil;ambique</a></li>
-                            <li><a href="#">Cabo Delgado</a></li>
+                            <li><a href="#">Advanced Software Engineering</a></li>
+                            <li><a href="#">UCM</a></li>
                         </ul>
                     </div>
                 </div>

@@ -84,13 +84,13 @@ public class FactoryPessoa extends Factory{
             pt.setInt(1,((Pessoa) o).getIdPessoa());
             pt.setString(2,((Pessoa) o).getNome());
             pt.setString(3,((Pessoa) o).getApelido());
-            pt.setString(2,((Pessoa) o).getSexo());
-            pt.setString(4,((Pessoa) o).getDataNascimento());
-            pt.setString(5,((Pessoa) o).getProvinciaNascimento());
-            pt.setString(6,((Pessoa) o).getCidadeNascimento());
-            pt.setString(7,((Pessoa) o).getEndereco());
-            pt.setString(8,((Pessoa) o).getTelefone());
-            pt.setInt(9,((Pessoa) o).getIdPessoa());
+            pt.setString(4,((Pessoa) o).getSexo());
+            pt.setString(5,((Pessoa) o).getDataNascimento());
+            pt.setString(6,((Pessoa) o).getProvinciaNascimento());
+            pt.setString(7,((Pessoa) o).getCidadeNascimento());
+            pt.setString(8,((Pessoa) o).getEndereco());
+            pt.setString(9,((Pessoa) o).getTelefone());
+            pt.setInt(10,((Pessoa) o).getIdPessoa());
             
             ris = pt.executeUpdate();
             pt.close();
