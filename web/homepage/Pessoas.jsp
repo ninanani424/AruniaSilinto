@@ -51,7 +51,7 @@
         <header class="top-header">
             <nav class="navbar header-nav navbar-expand-lg">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="../homepage/indexProject.jsp"><img src="../homepage/img/mingologohome.png" alt="image" width="350" height="100"></a>
+                    <a class="navbar-brand" href="../homepage/indexProject.jsp"><img src="../homepage/img/arunialogohome.png" alt="image" width="350" height="100"></a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-wd" aria-controls="navbar-wd" aria-expanded="false" aria-label="Toggle navigation">
                         <span></span>
                         <span></span>
@@ -60,10 +60,9 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                         <ul class="navbar-nav">
                             <li><a class="nav-link active" href="../homepage/indexProject.jsp">P&aacute;gina Inicial</a></li>
-                            <li><a class="nav-link" href="../beneficiario/landingBeneficiario.jsp">Benefici&aacute;rio</a></li>                      
-                            <li><a class="nav-link" href="../doador/landingDoador.jsp">Doador</a></li>
-                            <li><a class="nav-link" href="../funcionario/landingFuncionario.jsp">Funcion&aacute;rio</a></li>
-                            <li><a class="nav-link active" style="background:#f2184f;color:#fff;" href="../apoio/landingApoio.jsp">Doa&ccedil;&otilde;es</a></li>                           
+                            <li><a class="nav-link" href="../homepage/Pessoas.jsp?action=adicionar">Nova Pessoa</a></li>
+                            <li><a class="nav-link" href="../homepage/Pessoas.jsp?action=mostrar">Mostrar Todas Pessoas</a></li>                                                             
+                            <li><a class="nav-link active" style="background:#f2184f;color:#fff;" href="../apoio/landingApoio.jsp">Sobre N&oacute;s</a></li>                           
                         </ul>
                     </div>
                     <div class="search-box">
@@ -106,9 +105,9 @@
                 out.println("<th width='150' bgcolor='silver'><h2 align='center'>Nome</h2></th>");
                 out.println("<th width='150' bgcolor='silver'><h2 align='center'>Apelido</h2></th>");
                 out.println("<th width='100' bgcolor='silver'><h2 align='center'>Sexo</h2></th>");
-                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Data Nasc.</h2></th>");
-                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Prov&iacute;ncia Nasc.</h2></th>");
-                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Cidade Nasc.</h2></th>");
+                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Data de Nasc.</h2></th>");
+                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Prov&iacute;ncia de Nasc.</h2></th>");
+                out.println("<th width='150' bgcolor='silver'><h2 align='center'>Cidade de Nasc.</h2></th>");
                 out.println("<th width='200' bgcolor='silver'><h2 align='center'>Endere&ccedil;o</h2></th>");
                 out.println("<th width='150' bgcolor='silver'><h2 align='center'>Telefone</h2></th>");
                 out.println("<th width='auto' bgcolor='silver'><h2 align='center'>&nbsp;</h2></td>");
@@ -125,36 +124,40 @@
                     out.println("<td><p align='center'>" + p.getCidadeNascimento()+ "</p></td>");
                     out.println("<td><p align='center'>" + p.getEndereco()+ "</p></td>");
                     out.println("<td><p align='center'>" + p.getTelefone()+ "</p></td>");
-                    out.println("<td><a href='../Pessoas.jsp?action=editar&id=" + p.getIdPessoa() + "'><img src='../icons/edit.png' width='40' height='40' alt='Editar Pessoa'/> &nbsp; <a onclick='return confirm('Deseja apagar?')' href='../Pessoas.jsp.jsp?action=apagar&id=" + p.getIdPessoa() + "'><img src='../icons/remove.png' width='40' height='40' alt='Apagar Pessoa'/></td>");
+                    out.println("<td><a href='../homepage/Pessoas.jsp?action=editar&id=" + p.getIdPessoa() + "'><img src='../icons/edit.png' width='40' height='40' alt='Editar Pessoa'/> &nbsp; <a onclick='return confirm('Deseja apagar?')' href='../homepage/Pessoas.jsp?action=apagar&id=" + p.getIdPessoa() + "'><img src='../icons/remove.png' width='40' height='40' alt='Apagar Pessoa'/></td>");
                     out.println("</tr>");
                 }
                 out.println("</table>");
 
-            } /*  else if (action.equalsIgnoreCase("adicionar")) {
+            } else if (action.equalsIgnoreCase("adicionar")) {
 
-                out.println("<h3 align='center'>Criar novo Funcion&aacute;rio</h3>");
+                out.println("<h3 align='center'>Criar nova Pessoa</h3>");
 
                 out.println("<table border='0' align='center' bgcolor='silver'>");
-                out.println("<form method='get' action='../funcionario/funcionarios.jsp?action=criar'>");
+                out.println("<form method='get' action='../homepage/Pessoas.jsp?action=criar'>");
                 out.println("<input type='hidden' name='action' value='criar'/>");
                 out.println("<tr>");
                 out.println("<td width='200'><h2 align='center'>Nome:</h2></td>");
                 out.println("<td width='200'><input type='text' name='nome' required/></td>");
                 out.println("</tr>");
                 out.println("<tr>");
-                out.println("<td width='200'><h2 align='center'>Idade:</h2></td>");
-                out.println("<td width='200'><input type='number' name='idade' required/></td>");
-                out.println("</tr>");
+                out.println("<td width='200'><h2 align='center'>Apelido</h2></td>");
+                out.println("<td width='200'><input type='text' name='apelido' required/></td>");
+                out.println("</tr>");   
                 out.println("<tr>");
                 out.println("<td width='200'><h2 align='center'>Sexo:</h2></td>");
                 out.println("<td width='200'>Masculino<input type='radio' name='sexo' value='masculino' required>");
                 out.println("Femelino<input type='radio' name='sexo' value='femenino' required></td>");
                 out.println("</tr>");
                 out.println("<tr>");
-                out.println("<td width='200'><h2 align='center'>Prov&iacute;ncia:</h2></td>");
-                out.println("<td width='200'><select name='provincia'>");
-                out.println("<option value='MaputoCidade'>Maputo Cidade</option>");
-                out.println("<option value='MaputoProvincia'>Maputo Provincia</option>");
+                out.println("<td width='200'><h2 align='center'>Data de Nascimento:</h2></td>");
+                out.println("<td width='200'><input type='date' name='dataNascimento' required/></td>");
+                out.println("</tr>");
+                out.println("<tr>");
+                out.println("<td width='200'><h2 align='center'>Prov&iacute;ncia de Nascimento:</h2></td>");
+                out.println("<td width='200'><select name='provinciaNascimento'>");
+                out.println("<option value='Maputo Cidade'>Maputo Cidade</option>");
+                out.println("<option value='Maputo Provincia'>Maputo Provincia</option>");
                 out.println("<option value='Gaza'>Gaza</option>");
                 out.println("<option value='Inhambane'>Inhambane</option>");
                 out.println("<option value='Manica'>Manica</option>");
@@ -165,18 +168,18 @@
                 out.println("<option value='CaboDelgado'>Cabo Delgado</option>");
                 out.println("<option value='Niassa'>Niassa</option>");
                 out.println("</select></td>");
+                out.println("</tr>");            
+                out.println("<tr>");
+                out.println("<td width='200'><h2 align='center'>Cidade de Nascimento:</h2></td>");
+                out.println("<td width='200'><input type='text' name='cidadeNascimento' required/></td>");
                 out.println("</tr>");
                 out.println("<tr>");
-                out.println("<td width='200'><h2 align='center'>Desempenho:</h2></td>");
-                out.println("<td width='200'><input type='text' name='desempenho' required/></td>");
+                out.println("<td width='200'><h2 align='center'>Endere&ccedil;o:</h2></td>");
+                out.println("<td width='200'><input type='text' name='endereco' required/></td>");
                 out.println("</tr>");
                 out.println("<tr>");
-                out.println("<td width='200'><h2 align='center'>Quarteir&atilde;o:</h2></td>");
-                out.println("<td width='200'><input type='text' name='quarteirao' required/></td>");
-                out.println("</tr>");
-                out.println("<tr>");
-                out.println("<td width='200'><h2 align='center'>Bairro</h2></td>");
-                out.println("<td width='200'><input type='text' name='bairro' required/></td>");
+                out.println("<td width='200'><h2 align='center'>Telefone:</h2></td>");
+                out.println("<td width='200'><input type='number' name='telefone' required/></td>");
                 out.println("</tr>");
                 out.println("<tr>");
                 out.println("<td><input type='reset' value='Limpar'/>");
@@ -189,29 +192,31 @@
             } else if (action.equalsIgnoreCase("criar")) {
 
                 String nome = request.getParameter("nome");
-                String idade = request.getParameter("idade");
+                String apelido = request.getParameter("apelido");
                 String sexo = request.getParameter("sexo");
-                String provincia = request.getParameter("provincia");
-                String desempenho = request.getParameter("desempenho");
-                String quarteirao = request.getParameter("quarteirao");
-                String bairro = request.getParameter("bairro");
+                String dataNascimento = request.getParameter("dataNascimento");
+                String provinciaNascimento = request.getParameter("provinciaNascimento");
+                String cidadeNascimento = request.getParameter("cidadeNascimento");
+                String endereco = request.getParameter("endereco");
+                String telefone = request.getParameter("telefone");
 
                 FactoryPessoa fu = new FactoryPessoa();
                 Pessoa c = (Pessoa) fu.newElement();
 
                 c.setNome(nome);
-                c.setIdade(idade);
+                c.setApelido(apelido);
                 c.setSexo(sexo);
-                c.setProvincia(provincia);
-                c.setDesempenho(desempenho);
-                c.setQuarteirao(quarteirao);
-                c.setBairro(bairro);
+                c.setDataNascimento(dataNascimento);
+                c.setProvinciaNascimento(provinciaNascimento);
+                c.setCidadeNascimento(cidadeNascimento);
+                c.setEndereco(endereco);
+                c.setTelefone(telefone);
 
                 fu.insert(c);
 
-                response.sendRedirect(request.getContextPath() + "/funcionario/funcionarios.jsp?action=mostrar");
+                response.sendRedirect(request.getContextPath() + "/homepage/Pessoas.jsp?action=mostrar");
 
-            } else if (action.equalsIgnoreCase("apagar")) {
+            }  else if (action.equalsIgnoreCase("apagar")) {
 
                 String id = request.getParameter("id");
 
@@ -219,9 +224,9 @@
 
                 fu.delete(id);
 
-                response.sendRedirect(request.getContextPath() + "/funcionario/funcionarios.jsp?action=mostrar&alert=apagar");
+                response.sendRedirect(request.getContextPath() + "/homepage/Pessoas.jsp?action=mostrar&alert=apagar");
 
-            } else if (action.equalsIgnoreCase("editar")) {
+            } /* else if (action.equalsIgnoreCase("editar")) {
 
                 String id = request.getParameter("id");
 
@@ -279,9 +284,9 @@
                     String caboDelgado = "";
                     String niassa = "";
                     
-                    if (p.getProvincia().equalsIgnoreCase("MaputoCidade")) {
+                    if (p.getProvincia().equalsIgnoreCase("Maputo Cidade")) {
                         maputoCidade = "selected";
-                    } else if (p.getProvincia().equalsIgnoreCase("MaputoProvincia")) {
+                    } else if (p.getProvincia().equalsIgnoreCase("Maputo Provincia")) {
                         maputoProvincia = "selected";
                     } else if (p.getProvincia().equalsIgnoreCase("Gaza")) {
                         gaza = "selected";

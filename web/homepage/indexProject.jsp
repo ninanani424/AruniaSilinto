@@ -98,7 +98,7 @@
                     <div class="collapse navbar-collapse justify-content-end" id="navbar-wd">
                         <ul class="navbar-nav">
                             <li><a class="nav-link active" href="../homepage/indexProject.jsp">P&aacute;gina Inicial</a></li>
-                            <li><a class="nav-link" href="../doador/landingDoador.jsp">Nova Pessoa</a></li>
+                            <li><a class="nav-link" href="../homepage/Pessoas.jsp?action=adicionar">Nova Pessoa</a></li>
                             <li><a class="nav-link" href="../homepage/Pessoas.jsp?action=mostrar">Mostrar Todas Pessoas</a></li>                                                             
                             <li><a class="nav-link active" style="background:#f2184f;color:#fff;" href="../apoio/landingApoio.jsp">Sobre N&oacute;s</a></li>                           
                         </ul>
