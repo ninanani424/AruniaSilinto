@@ -81,7 +81,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="pogoSlider" id="js-main-slider">
-                        <div class="pogoSlider-slide" style="background-image:url(img/ciclone11.jpg);">
+                        <div class="pogoSlider-slide" style="background-image:url(img/pessoas1.jpg);">
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12">
