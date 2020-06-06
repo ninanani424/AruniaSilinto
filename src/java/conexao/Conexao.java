@@ -9,7 +9,7 @@ public class Conexao {
         String url = "jdbc:mysql://localhost:3306/";
         String dbName = "aruniaSilinto";
         String userName = "root";
-        String password = "12345678";
+        String password = "root";
 
         Class.forName(driver).newInstance();
         return  DriverManager.getConnection(url+dbName,userName,password);
